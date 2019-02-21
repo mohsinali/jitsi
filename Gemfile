@@ -29,6 +29,7 @@ gem 'high_voltage'
 gem 'jquery-rails'
 gem 'pg'
 gem 'slim-rails'
+gem 'friendly_id', '~> 5.2.4'
 group :development do
   gem 'hub', :require=>nil
   gem 'rails_layout'
