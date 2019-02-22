@@ -25,7 +25,7 @@
         .row
           .col-md-5
             h3
-              | Rooms
+              | Meeting Rooms
               button.btn.btn-primary.btn-xs.btnNewRoom.pull-right type="button"  New Room
         
         .alert.alert-info.hide.roomAlertBox            
@@ -55,13 +55,7 @@
 
                 tbody
                   - @rooms.each_with_index do |room, index|
-                    tr
-                      td = index + 1
-                      td
-                        = link_to "#" do
-                          = room.name
-                          |  
-                          span.glyphicon.glyphicon-facetime-video aria-hidden="true"
+                    = render partial: 'room', locals: {room: room, count: index+1}
 
   .row
     .box
