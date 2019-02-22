@@ -1,0 +1,11 @@
+/ ####################################################
+/ Create room form
+.newRoomFormContainer.hide
+  = form_for room, url: {controller: "rooms", action: "create"}, html: {class: "newRoomForm"}, remote: true do |f|
+    .row
+      .col-md-4
+        .form-group              
+          = f.text_field :name, placeholder: 'Room name', class: 'form-control'              
+      
+      .col-md-4
+        = f.submit "Create", class: 'btn btn-primary'

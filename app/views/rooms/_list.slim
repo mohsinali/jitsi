@@ -1,0 +1,12 @@
+- if rooms.any?
+  .row
+    .col-md-6
+      table.table.table-hover
+        thead
+          tr
+            th #
+            th Room Name
+
+        tbody
+          - rooms.each_with_index do |room, index|
+            = render partial: 'rooms/room', locals: {room: room, count: index+1}

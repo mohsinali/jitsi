@@ -26,36 +26,17 @@
           .col-md-5
             h3
               | Meeting Rooms
-              button.btn.btn-primary.btn-xs.btnNewRoom.pull-right type="button"  New Room
+          .col-md-1
+            h3              
+            button.btn.btn-primary.btn-xs.btnNewRoom.pull-right type="button"  New Room
         
         .alert.alert-info.hide.roomAlertBox            
         
-        / ####################################################
-        / Create room form
-        .newRoomFormContainer.hide
-          = form_for @room, url: {controller: "rooms", action: "create"}, html: {class: "newRoomForm"}, remote: true do |f|
-            .row
-              .col-md-4
-                .form-group              
-                  = f.text_field :name, placeholder: 'Room name', class: 'form-control'              
-              
-              .col-md-4
-                = f.submit "Create", class: 'btn btn-primary'        
+        // Room Form
+        = render partial: 'rooms/form', locals: { room: @room }
 
-        / ####################################################
-        / Rooms list
-        - if @rooms.any?
-          .row
-            .col-md-6
-              table.table.table-hover
-                thead
-                  tr
-                    th #
-                    th Room Name
-
-                tbody
-                  - @rooms.each_with_index do |room, index|
-                    = render partial: 'rooms/room', locals: {room: room, count: index+1}
+        // Rooms List
+        = render partial: 'rooms/list', locals: { rooms: @rooms }
 
   .row
     .box
