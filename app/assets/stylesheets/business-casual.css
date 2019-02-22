@@ -32,6 +32,11 @@ hr {
     border-color: #999999;
 }
 
+table {
+  background-color: #fff;
+  border: 1px solid #CCC;
+}
+
 .brand,
 .address-bar {
     display: none;

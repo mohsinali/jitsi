@@ -21,8 +21,17 @@
           | Build a website
           strong worth visiting
         hr/
-        h3 Rooms
+        
+        .row
+          .col-md-5
+            h3
+              | Rooms
+              button.btn.btn-primary.btn-xs.btnNewRoom.pull-right type="button"  New Room
+        
         .alert.alert-info.hide.roomAlertBox            
+        
+        / ####################################################
+        / Create room form
         .newRoomFormContainer.hide
           = form_for @room, url: {controller: "rooms", action: "create"}, html: {class: "newRoomForm"}, remote: true do |f|
             .row
@@ -31,9 +40,29 @@
                   = f.text_field :name, placeholder: 'Room name', class: 'form-control'              
               
               .col-md-4
-                = f.submit "Create", class: 'btn btn-primary'
+                = f.submit "Create", class: 'btn btn-primary'        
 
-        button.btn.btn-primary.btnNewRoom type="button"  New Room
+        / ####################################################
+        / Rooms list
+        - if @rooms.any?
+          .row
+            .col-md-6
+              table.table.table-hover
+                thead
+                  tr
+                    th #
+                    th Room Name
+
+                tbody
+                  - @rooms.each_with_index do |room, index|
+                    tr
+                      td = index + 1
+                      td
+                        = link_to "#" do
+                          = room.name
+                          |  
+                          span.glyphicon.glyphicon-facetime-video aria-hidden="true"
+
   .row
     .box
       .col-lg-12
