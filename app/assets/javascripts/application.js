@@ -13,4 +13,9 @@
 //= require jquery
 //= require rails-ujs
 //= require bootstrap-sprockets
+//= require paloma
 //= require_tree .
+
+$(document).ready(function () {
+  Paloma.start();
+});

@@ -1,0 +1,47 @@
+.brand Meet Attribes
+.address-bar 22 Bramley House | Bramley Road, Long Eaton NG10 3SX | +44 (0)330 2232756
+/ render 'layouts/navigation' %
+.container
+  .row
+    .box
+      .col-lg-12.text-center
+        h2.brand-before
+          small Welcome to
+        h1.brand-name Business Casual
+        hr.tagline-divider/
+        h2
+          small
+            | By
+            strong Start Bootstrap
+  .row
+    .box
+      .col-lg-12
+        hr/
+        h2.intro-text.text-center
+          | Build a website
+          strong worth visiting
+        hr/
+        h3 Rooms
+        .alert.alert-info.hide.roomAlertBox            
+        .newRoomFormContainer.hide
+          = form_for @room, url: {controller: "rooms", action: "create"}, html: {class: "newRoomForm"}, remote: true do |f|
+            .row
+              .col-md-4
+                .form-group              
+                  = f.text_field :name, placeholder: 'Room name', class: 'form-control'              
+              
+              .col-md-4
+                = f.submit "Create", class: 'btn btn-primary'
+
+        button.btn.btn-primary.btnNewRoom type="button"  New Room
+  .row
+    .box
+      .col-lg-12
+        hr/
+        h2.intro-text.text-center
+          | Beautiful boxes
+          strong to showcase your content
+        hr/
+        p Use as many boxes as you like, and put anything you want in them! They are great for just about anything, the sky's the limit!
+        p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc placerat diam quis nisl vestibulum dignissim. In hac habitasse platea dictumst. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+/! /.container

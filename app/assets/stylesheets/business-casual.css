@@ -6,11 +6,7 @@
 
 body {
     font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
-    background: url('http://ironsummitmedia.github.io/startbootstrap-business-casual/img/bg.jpg') no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-    -o-background-size: cover;
+    background-color: #1D69D4;
 }
 
 h1,
@@ -80,8 +76,9 @@ hr {
 .box {
     margin-bottom: 20px;
     padding: 30px 15px;
-    background: #fff;
+    /* background: #fff; */
     background: rgba(255,255,255,0.9);
+    border-radius: .25rem !important;
 }
 
 .intro-text {
