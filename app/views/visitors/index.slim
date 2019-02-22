@@ -55,7 +55,7 @@
 
                 tbody
                   - @rooms.each_with_index do |room, index|
-                    = render partial: 'room', locals: {room: room, count: index+1}
+                    = render partial: 'rooms/room', locals: {room: room, count: index+1}
 
   .row
     .box

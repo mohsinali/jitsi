@@ -2,3 +2,5 @@ $('.roomAlertBox').removeClass('hide').html('Room created successfully.');
 $('.newRoomFormContainer').addClass('hide');
 $('.btnNewRoom').show();
 
+$('.table tr:last').after("<%= j render(partial: 'room', locals: {room: @room, count: @count + 1})%>");
+
