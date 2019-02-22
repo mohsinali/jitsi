@@ -1,0 +1,13 @@
+.alert.alert-info.hide.invitationAlertBox
+= form_for "invitation_form", url: {controller: "invitations", action: "create"}, html: {class: "invitationForm"}, remote: true do |f|
+  .row
+    .col-md-12
+      .form-group
+        = f.text_field :name, placeholder: 'Comma separated email addresses', class: 'form-control'              
+    
+  .row
+    .col-md-8
+      .form-group
+        = f.select :room_id, options_from_collection_for_select(current_user.rooms, "id", "name"), {}, {class: 'form-control'}
+    .col-md-4
+      = f.submit "Send", class: 'btn btn-primary'

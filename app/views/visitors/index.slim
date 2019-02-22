@@ -6,37 +6,49 @@
     .box
       .col-lg-12.text-center
         h2.brand-before
-          small Welcome to
-        h1.brand-name Business Casual
+          small 
+            | Welcome 
+            strong
+              = current_user.name
+        h1.brand-name Video Conferencing Platform
         hr.tagline-divider/
         h2
           small
             | By
-            strong Start Bootstrap
+            strong Attribe Solutions
   .row
     .box
       .col-lg-12
         hr/
         h2.intro-text.text-center
-          | Build a website
-          strong worth visiting
+          | Manage meeting rooms 
+          strong and Invitations
         hr/
         
         .row
-          .col-md-5
-            h3
-              | Meeting Rooms
-          .col-md-1
-            h3              
-            button.btn.btn-primary.btn-xs.btnNewRoom.pull-right type="button"  New Room
-        
-        .alert.alert-info.hide.roomAlertBox            
-        
-        // Room Form
-        = render partial: 'rooms/form', locals: { room: @room }
+          .col-md-6
+            .row
+              .col-md-11
+                h3
+                  | Meeting Rooms
+              .col-md-1
+                h3              
+                button.btn.btn-primary.btn-xs.btnNewRoom.pull-right type="button"  New Room
+            
+            .alert.alert-info.hide.roomAlertBox
+            
+            // Room Form
+            = render partial: 'rooms/form', locals: { room: @room }
 
-        // Rooms List
-        = render partial: 'rooms/list', locals: { rooms: @rooms }
+            // Rooms List
+            = render partial: 'rooms/list', locals: { rooms: @rooms }
+
+          .col-md-6
+            .row
+              .col-md-12
+                h3
+                  | Invitations                
+                = render partial: 'invitations/form'
 
   .row
     .box

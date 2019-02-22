@@ -31,6 +31,7 @@ gem 'pg'
 gem 'slim-rails'
 gem 'friendly_id', '~> 5.2.4'
 gem 'paloma', '~> 5.1.0'
+gem 'figaro'
 group :development do
   gem 'hub', :require=>nil
   gem 'rails_layout'
