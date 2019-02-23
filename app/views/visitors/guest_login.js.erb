@@ -1,0 +1,5 @@
+<% if @room %>
+  window.location.href = "<%= ENV['JITSI_SERVER'] + "/#{@room.slug}" %>";
+<% else %>
+  $(".error").removeClass('hide').html('Invalid pin.');
+<% end %>

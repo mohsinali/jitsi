@@ -1,0 +1,10 @@
+.at-red-form.text-center
+  .error.hide
+  = form_for "guest_login", url: {controller: 'visitors', action: 'guest_login'}, html: {class: "guestLoginForm"}, remote: true do |f|
+    .form-group
+      = f.text_field :room_name, placeholder: 'Room name', class: 'form-control', id: 'email'
+
+    .form-group
+      = f.text_field :guest_pin, placeholder: 'Guest Pin', class: 'form-control', id: 'pwd'
+
+    = f.submit 'Join', class: 'btn btn-default btnJoin'

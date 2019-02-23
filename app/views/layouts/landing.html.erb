@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title><%= content_for?(:title) ? yield(:title) : 'Jitsi' %> </title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+  <meta name="description" content="<% content_for?(:description) ? yield(:description) : 'Jitsi' %>">
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+	
+	<style>
+    body {
+      font-family: 'Open Sans', sans-serif;
+    }
+
+    .error {
+      margin-bottom: 3px;
+      color: red;
+    }
+		.at-red {
+			background: #000;
+			height: 100vh;			
+			overflow: hidden;
+		}
+		.at-red img.logo-img {
+			width: 500px;
+			margin: 5rem auto 5.5rem;
+		}
+		.at-red-form form .form-group input {
+			color: #bf0000;
+			font-size: 11px;
+			font-family: 'Open Sans', sans-serif;
+			font-weight: 500;
+			width: 195px;
+			margin: 0 auto;
+			height: 25px;
+		}
+		.at-red-form form .checkbox label {
+			color: #fff;
+			text-transform: uppercase;
+			font-size: 14px;
+			font-family: 'Open Sans', sans-serif;
+			font-weight: 500;
+		}
+		.at-red-form form button {
+			color: #bf0000;
+			text-transform: uppercase;
+			font-size: 11px;
+			font-family: 'Open Sans', sans-serif;
+			font-weight: 500;
+			margin-bottom: 15px;
+			height: 24px;
+			line-height: 8px;
+		}
+		.at-red-form form button:hover,
+		.at-red-form form button:focus,
+		.at-red-form form button:active {
+			color: #fff !important;
+			background: #bf0000 !important;
+			border-color: #bf0000 !important; 
+			outline: 0 !important;
+		}
+		.at-red-bottom-form {
+			position: absolute;
+			bottom: 15px;
+			top: auto;
+			width: 100%;
+			left: 0;
+			overflow: hidden;
+		}
+		
+		.bottom-pw p {
+      font-family: 'Open Sans', sans-serif;
+			color: #fff;
+			position: relative;
+			top: 0px;
+			font-family: "open sans";
+			font-size: 13px;
+			font-weight: 500;
+		}
+		
+		.bottom-pw p a{
+			color: #bf0000;
+      font-family: 'Open Sans', sans-serif;
+		}
+	</style>
+  <%= javascript_include_tag 'application' %>
+  <%= csrf_meta_tags %>
+</head>
+
+<body class="at-red">  
+	<section class="container-fluid ">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-2"></div>
+				
+				<div class="col-md-8">
+					<div class="text-center">
+            <%= image_tag 'logo.gif', class: "logo-img img-responsive" %>
+					</div>
+				</div>
+				
+				<div class="col-md-2"></div>
+			</div>
+			
+			<div class="row">
+				<div class="col-md-4"></div>
+				
+				<div class="col-md-4">
+					<%=yield%>
+				</div>
+				
+				<div class="col-md-4"></div>
+			</div>
+		</div>	 
+	</section>
+	<section class="container-fluid bottom-pw">
+		<div class="row">
+			<div class="col-md-12 text-right">
+				<p>Powered by <a href="http://www.attribes.com" >Attribe Solutions</a></p>
+			</div>
+		</div>
+	</section>
+  <%= insert_paloma_hook %>
+</body>
+</html>
