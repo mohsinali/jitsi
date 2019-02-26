@@ -34,7 +34,7 @@ html
                 strong Attribe Solutions
             
             p.pull-right
-              = link_to 'Manage Users', '#', class: 'btn btn-default' if current_user.has_role? :admin
+              = link_to 'Manage Users', admin_index_path(), class: 'btn btn-default' if current_user.has_role? :admin
               |  
               = link_to 'Sign out', destroy_user_session_path, :method=>'delete', class: 'btn btn-primary'
 

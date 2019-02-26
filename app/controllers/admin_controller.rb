@@ -14,10 +14,20 @@ class AdminController < ApplicationController
     
     @user = User.new(name: name, email: email, password: password)
     @user.save
+    
+    @user.add_role :user
 
     respond_to do |format|
       format.js
     end
+  end
 
+  def destroy
+    @user = User.find_by(id: params[:id])
+    @user.destroy
+    
+    respond_to do |format|
+      format.js
+    end
   end
 end

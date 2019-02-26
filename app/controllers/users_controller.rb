@@ -3,8 +3,8 @@ class UsersController < ApplicationController
   # before_action :authenticate_admin
 
   def index
-    @users = User.all
-    # User.with_role :user
+    # @users = User.all
+    @users = User.with_role :user
   end
 
   def create
