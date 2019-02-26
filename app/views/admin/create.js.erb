@@ -1,0 +1,7 @@
+<% if @user.persisted? %>
+  $('.newUserAlertBox').removeClass('hide').html('User has been added successfully.');
+  $('.newUserForm').addClass('hide');
+  $('.table tr:last').after("<%= j render(partial: 'admin/user', locals: {user: @user})%>");
+<% else %>
+  $('.newUserAlertBox').removeClass('hide').html('User could not be created.');
+<% end %>

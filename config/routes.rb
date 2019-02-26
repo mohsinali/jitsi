@@ -4,7 +4,8 @@ Rails.application.routes.draw do
     sessions: 'users/sessions'
   }
 
-  resources :users
+  resources :users ## Deprecate it.
+  resources :admin
   resources :rooms
   resources :invitations
   

@@ -1,0 +1,20 @@
+.alert.alert-info.hide.newUserAlertBox
+= form_for "new_user_form", url: {controller: "admin", action: "create"}, html: {class: "newUserForm hide"}, remote: true do |f|
+  h3 Add New User
+  
+  .row
+    .col-md-6
+      .form-group
+        = f.text_field :name, placeholder: 'Name', class: 'form-control'
+  .row
+    .col-md-3
+      .form-group
+        = f.text_field :email, placeholder: 'Email', class: 'form-control'
+  
+    .col-md-3
+      .form-group
+        = f.text_field :password, placeholder: 'Password', class: 'form-control'
+
+  .row
+    .col-md-4
+      = f.submit "Add", class: 'btn btn-primary btnNewUserSubmit'
