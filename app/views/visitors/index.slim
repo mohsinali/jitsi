@@ -16,6 +16,9 @@
           small
             | By
             strong Attribe Solutions
+        
+        p.pull-right
+          = link_to 'Sign out', destroy_user_session_path, :method=>'delete', class: 'btn btn-primary'
   .row
     .box
       .col-lg-12
