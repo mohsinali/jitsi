@@ -1,0 +1,19 @@
+.row
+  .box
+    .col-lg-12
+      hr/
+      h2.intro-text.text-center
+        | Manage 
+        strong Users
+      hr/
+
+      button.btn.btn-default.btn-sm.btnNewUser type="button" 
+        span.glyphicon.glyphicon-plus
+        |  New User
+      = render partial: 'form'
+      br
+      br
+      table.table
+        tbody
+          - @users.each do |user|            
+            = render user

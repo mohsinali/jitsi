@@ -1,0 +1,17 @@
+.alert.alert-info.hide.invitationAlertBox
+
+= form_with url: users_path, class: 'newUserForm hide' do |f|
+  h3 Add New User
+  .row
+    .col-md-4
+      .form-group
+        = f.text_field :email, placeholder: 'Email', class: 'form-control'
+
+  .row
+    .col-md-4
+      .form-group
+        = f.text_field :password, placeholder: 'Password', class: 'form-control'
+
+  .row
+    .col-md-4
+      = f.submit "Send", class: 'btn btn-primary'

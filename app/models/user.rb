@@ -6,5 +6,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   ## Associations
-  has_many :rooms
+  has_many :rooms, dependent: :destroy
 end

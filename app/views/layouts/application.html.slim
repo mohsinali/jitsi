@@ -8,9 +8,38 @@ html
     == stylesheet_link_tag "application", :media => 'all'
     == javascript_include_tag 'application'
     == csrf_meta_tags
+    / <!-- Custom Fonts -->
+    link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css"
+    link href="http://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic" rel="stylesheet" type="text/css"
   body
-    header
-      == render 'layouts/navigation'
-    main[role="main"]
-      == render 'layouts/messages'
-      == yield    
+    .brand Meet Attribes
+    .address-bar 22 Bramley House | Bramley Road, Long Eaton NG10 3SX | +44 (0)330 2232756
+
+    .container
+      .row
+        .box
+          .col-lg-12.text-center
+            = render 'layouts/messages'
+
+            h2.brand-before
+              small 
+                | Welcome 
+                strong
+                  = current_user.name
+            h1.brand-name Video Conferencing Platform
+            hr.tagline-divider/
+            h2
+              small
+                | By
+                strong Attribe Solutions
+            
+            p.pull-right
+              = link_to 'Manage Users', '#', class: 'btn btn-default' if current_user.has_role? :admin
+              |  
+              = link_to 'Sign out', destroy_user_session_path, :method=>'delete', class: 'btn btn-primary'
+
+      = yield
+
+    
+    = insert_paloma_hook
+    = render 'layouts/footer'    

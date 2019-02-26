@@ -1,8 +1,18 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
+  # before_action :authenticate_admin
 
   def index
     @users = User.all
+    # User.with_role :user
+  end
+
+  def create
+    binding.pry
+
+    respond_to do |format|
+      format.js
+    end
   end
 
   def show
