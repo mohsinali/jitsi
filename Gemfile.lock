@@ -129,6 +129,7 @@ GEM
     minitest (5.11.3)
     msgpack (1.2.6)
     multi_json (1.13.1)
+    mustermann (1.0.3)
     nio4r (2.3.1)
     nokogiri (1.10.1)
       mini_portile2 (~> 2.4.0)
@@ -146,6 +147,8 @@ GEM
     public_suffix (3.0.3)
     puma (3.12.0)
     rack (2.0.6)
+    rack-protection (2.0.5)
+      rack
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
     rails (5.2.2)
@@ -183,6 +186,7 @@ GEM
       railties (>= 4.2.0, < 6.0)
     rolify (5.2.0)
     ruby_dep (1.5.0)
+    ruby_http_client (3.3.0)
     rubyzip (1.2.2)
     sass (3.7.3)
       sass-listen (~> 4.0.0)
@@ -201,6 +205,17 @@ GEM
     selenium-webdriver (3.141.0)
       childprocess (~> 0.5)
       rubyzip (~> 1.2, >= 1.2.2)
+    sendgrid-actionmailer (2.2.1)
+      mail (~> 2.5)
+      sendgrid-ruby (~> 5.3.0)
+    sendgrid-ruby (5.3.0)
+      ruby_http_client (~> 3.3.0)
+      sinatra (>= 1.4.7, < 3)
+    sinatra (2.0.5)
+      mustermann (~> 1.0)
+      rack (~> 2.0)
+      rack-protection (= 2.0.5)
+      tilt (~> 2.0)
     slim (4.0.1)
       temple (>= 0.7.6, < 0.9)
       tilt (>= 2.0.6, < 2.1)
@@ -273,6 +288,7 @@ DEPENDENCIES
   rolify
   sass-rails (~> 5.0)
   selenium-webdriver
+  sendgrid-actionmailer
   slim-rails
   spring
   spring-watcher-listen (~> 2.0.0)
