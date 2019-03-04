@@ -1,6 +1,6 @@
 class AdminController < ApplicationController
   before_action :authenticate_user!
-  # before_action :authenticate_admin
+  before_action :authenticate_admin
 
   def index
     @users = User.with_role :user
@@ -30,4 +30,11 @@ class AdminController < ApplicationController
       format.js
     end
   end
+
+  private
+    def authenticate_admin
+      unless current_user.has_role? :admin
+        redirect_to visitors_url(), alert: 'You are not allowed to access this section.'
+      end
+    end
 end
