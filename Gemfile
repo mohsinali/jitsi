@@ -34,6 +34,7 @@ gem 'paloma', '~> 5.1.0'
 gem 'figaro'
 gem 'rolify'
 gem 'sendgrid-actionmailer'
+gem 'rails_email_preview', '~> 2.2.1'
 group :development do
   gem 'hub', :require=>nil
   gem 'rails_layout'

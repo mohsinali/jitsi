@@ -1,5 +1,22 @@
-h1 Hi!
+h3 Hello there!
+
+p = "#{@user.name} has invited you to join meeting. You can join the room at following link:"
 
 p
-  | You can join meeting here: 
-  = link_to "https://meet.attribes.com/#{@room.slug}", "https://meet.attribes.com/#{@room.slug}"
+  a href="https://join.attribes.com" target="_blank" https://join.attribes.com
+  br
+
+  strong Room Name: 
+  = @room.name
+  br
+
+  strong Guest Pin: 
+  = @room.slug
+
+p If you have any problems, feel free to call us at +44 (0)330 2232756
+
+p
+  | Thanks, 
+  br
+  | Team Attribe
+

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount RailsEmailPreview::Engine, at: 'emails'
   root to: 'visitors#home'
   devise_for :users, controllers: {
     sessions: 'users/sessions'
