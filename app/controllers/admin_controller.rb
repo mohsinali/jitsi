@@ -11,9 +11,9 @@ class AdminController < ApplicationController
     name      = params[:new_user_form][:name]
     email     = params[:new_user_form][:email]
     password  = params[:new_user_form][:password]
-    
-    @user = User.new(name: name, email: email, password: password)
-    @user.save
+    binding.pry
+    @user = User.invite!(name: name, email: email)
+    # @user.save
     
     @user.add_role :user
 

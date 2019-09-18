@@ -25,6 +25,7 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'bootstrap-sass'
 gem 'devise'
+gem 'devise_invitable', '~> 2.0.0'
 gem 'high_voltage'
 gem 'jquery-rails'
 gem 'pg'
