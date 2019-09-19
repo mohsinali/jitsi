@@ -8,7 +8,6 @@ class UsersController < ApplicationController
   end
 
   def create
-    binding.pry
 
     respond_to do |format|
       format.js
