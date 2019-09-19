@@ -13,9 +13,11 @@ class AdminController < ApplicationController
     password  = params[:new_user_form][:password]
     
     @user = User.new(name: name, email: email, password: password)
-    @user.save
     
-    @user.add_role :user
+    if @user.save
+      @user.add_role :user
+      UserMailer.send_credentials(@user, password).deliver
+    end
 
     respond_to do |format|
       format.js
